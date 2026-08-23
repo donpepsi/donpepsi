@@ -1,4 +1,4 @@
-// Aidan Claffey Buses — site behaviour
+// Claffey Travel — site behaviour
 
 document.addEventListener('DOMContentLoaded', function () {
   // Mobile nav toggle
