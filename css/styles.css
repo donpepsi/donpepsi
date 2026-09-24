@@ -750,23 +750,6 @@ section { padding: 88px 0; }
 .form-status.success { display: block; background: rgba(39, 174, 96, 0.12); color: #1e8449; }
 .form-status.error { display: block; background: rgba(192, 57, 43, 0.12); color: #c0392b; }
 
-.map-embed {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--grey-200);
-  margin-top: 40px;
-  height: 320px;
-  background: var(--grey-200);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--grey-700);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  text-align: center;
-  padding: 24px;
-}
-
 /* ---------- FAQ ---------- */
 .faq-item {
   border-bottom: 1px solid var(--grey-200);
