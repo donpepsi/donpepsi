@@ -82,19 +82,29 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // NOTE: This form currently has no backend connected.
-    // To go live, connect this form to an email/form service (e.g. Formspree,
-    // Netlify Forms, or a custom backend) so enquiries actually reach your inbox.
     var submitBtn = form.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    setTimeout(function () {
-      statusBox.classList.add('success');
-      statusBox.textContent = "Thanks! Your enquiry has been prepared. (Note: this demo form isn't yet connected to an email service — see setup notes.)";
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        statusBox.classList.add('success');
+        statusBox.textContent = "Thanks! Your enquiry has been sent — we'll be in touch within two business days.";
+        form.reset();
+      } else {
+        statusBox.classList.add('error');
+        statusBox.textContent = "Sorry, something went wrong sending your enquiry. Please call us instead on 087 653 1777.";
+      }
+    }).catch(function () {
+      statusBox.classList.add('error');
+      statusBox.textContent = "Sorry, something went wrong sending your enquiry. Please call us instead on 087 653 1777.";
+    }).finally(function () {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Enquiry';
-      form.reset();
-    }, 700);
+    });
   });
 });
