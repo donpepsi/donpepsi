@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Cookie consent + Google Analytics
-  // TODO: replace with your real GA4 Measurement ID (from analytics.google.com) to enable analytics.
-  var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  var GA_MEASUREMENT_ID = 'G-9TCBKEWVQY';
 
   function loadGoogleAnalytics() {
     if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf('XXXXXXXXXX') !== -1) return;
